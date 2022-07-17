@@ -1,0 +1,237 @@
+$very-dark-blue: #1b1d23;
+$dark-gray: #60636d;
+$light-gray: #c8ccd8;
+$very-light-gray: #EEEFF4;
+
+@font-face {
+  font-family: "League Spartan";
+  src: url("./assets/fonts/LeagueSpartan-VariableFont_wght.ttf");
+}
+
+%heading {
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 48px;
+}
+
+%body-text {
+  font-weight: 500;
+  color: white;
+  size: 18px;
+  line-height: 24px;
+}
+
+%section {
+  padding: 3rem 2rem;
+}
+
+%button {
+  font-weight: 700;
+  color: white;
+  size: 18px;
+  background-color: $very-dark-blue;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2rem;
+  gap: 1rem;
+  img {
+    filter: brightness(10);
+  }
+}
+
+%decor-pseudo {
+  content: "";
+  width: 20%;
+  height: 2px;
+  background: $light-gray;
+  position: absolute;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+  font-size: 62.5%;
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+.header-nav-wrapper {
+  position: relative;
+  z-index: 3;
+
+}
+
+@keyframes slide-down {
+  0% { opacity: 0.7; -webkit-transform: translateY(-20%); }   
+  100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+
+#mobile-nav {
+  display: none;
+  background-color: $very-light-gray;
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  animation: slide-down .3s linear;
+ 
+  .ul-top-level {
+    padding-left: 0;
+  }
+  .izglitiba-sub,
+  .pakalpojumi-sub,
+  .blogs-sub {
+    display: none;
+  }
+  ul {
+    list-style: none;
+    color: $very-dark-blue;
+    margin: 0;
+    li {
+      margin: 1rem;
+      font-weight: 700; 
+      a {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+header {
+  img.logo {
+    width: 11rem;
+  }
+  button.nav-button {
+    display: inline-block;
+    border: none;
+    padding: 1rem;
+    text-decoration: none;
+    background-color: transparent;
+    color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.intro-tab {
+  @extend %section;
+  background-size: cover !important;
+  background-position: center !important;
+  background-blend-mode: darken;
+  h1 {
+    @extend %heading;
+    color: white;
+    font-size: 48px;
+    margin-bottom: -0.5rem;
+  }
+  p {
+    @extend %body-text;
+  }
+  button {
+    @extend %button;
+    margin-top: 3rem;
+  }
+}
+
+.description {
+  @extend %section;
+  text-align: justify;
+  h2 {
+    @extend %heading;
+    text-align: left;
+    font-size: 48px;
+    padding-top: 2.5rem;
+    margin-top: 0;
+    position: relative;
+  }
+  &:before {
+    @extend %decor-pseudo;
+  }
+}
+
+.photo-section {
+  @extend %section;
+  background-blend-mode: darken;
+  background-image: url(./assets/home/photo.jpg);
+  position: relative;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  h2 {
+    @extend %heading;
+    font-size: 28px;
+    color: white;
+    letter-spacing: -1px;
+    line-height: 35px;
+    padding-top: 10rem;
+  }
+  button {
+    @extend %button;
+    width: max-content;
+  }
+}
+
+.section-wrapper {
+  background-color: white;
+  padding-bottom: 8rem;
+  z-index: 1;
+}
+
+.modal-bg {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 440%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+footer {
+  @extend %section;
+  background-color: $very-light-gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 4rem;
+  button {
+    @extend %button;
+    margin-top: 1rem;
+  }
+  .logo {
+    background-color: $very-dark-blue;
+    width: 14rem;
+    height: 6rem;
+    object-fit: contain;
+    position: absolute;
+    bottom: 23.5rem;
+  }
+  a {
+    color: $dark-gray;
+    font-weight: 600;
+    size: 18px;
+    margin: 0.8rem;
+  }
+}

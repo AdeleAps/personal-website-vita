@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "League Spartan";
+  src: url("./assets/fonts/LeagueSpartan-VariableFont_wght.ttf");
+}
+
+.intro-tab h1, .description h2, .photo-section h2 {
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 48px;
+}
+
+.intro-tab p {
+  font-weight: 500;
+  color: white;
+  size: 18px;
+  line-height: 24px;
+}
+
+.intro-tab, .description, .photo-section, footer {
+  padding: 3rem 2rem;
+}
+
+.intro-tab button, .photo-section button, footer button {
+  font-weight: 700;
+  color: white;
+  size: 18px;
+  background-color: #1b1d23;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em 2rem;
+  gap: 1rem;
+}
+
+.intro-tab button img, .photo-section button img, footer button img {
+  -webkit-filter: brightness(10);
+          filter: brightness(10);
+}
+
+.description:before {
+  content: "";
+  width: 20%;
+  height: 2px;
+  background: #c8ccd8;
+  position: absolute;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+  font-size: 62.5%;
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.header-nav-wrapper {
+  position: relative;
+  z-index: 3;
+}
+
+@-webkit-keyframes slide-down {
+  0% {
+    opacity: 0.7;
+    -webkit-transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0.7;
+    -webkit-transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+#mobile-nav {
+  display: none;
+  background-color: #EEEFF4;
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  -webkit-animation: slide-down .3s linear;
+          animation: slide-down .3s linear;
+}
+
+#mobile-nav .ul-top-level {
+  padding-left: 0;
+}
+
+#mobile-nav .izglitiba-sub,
+#mobile-nav .pakalpojumi-sub,
+#mobile-nav .blogs-sub {
+  display: none;
+}
+
+#mobile-nav ul {
+  list-style: none;
+  color: #1b1d23;
+  margin: 0;
+}
+
+#mobile-nav ul li {
+  margin: 1rem;
+  font-weight: 700;
+}
+
+#mobile-nav ul li a {
+  font-size: 25px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5rem;
+}
+
+header img.logo {
+  width: 11rem;
+}
+
+header button.nav-button {
+  display: inline-block;
+  border: none;
+  padding: 1rem;
+  text-decoration: none;
+  background-color: transparent;
+  color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.intro-tab {
+  background-size: cover !important;
+  background-position: center !important;
+  background-blend-mode: darken;
+}
+
+.intro-tab h1 {
+  color: white;
+  font-size: 48px;
+  margin-bottom: -0.5rem;
+}
+
+.intro-tab button {
+  margin-top: 3rem;
+}
+
+.description {
+  text-align: justify;
+}
+
+.description h2 {
+  text-align: left;
+  font-size: 48px;
+  padding-top: 2.5rem;
+  margin-top: 0;
+  position: relative;
+}
+
+.photo-section {
+  background-blend-mode: darken;
+  background-image: url(./assets/home/photo.jpg);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.photo-section h2 {
+  font-size: 28px;
+  color: white;
+  letter-spacing: -1px;
+  line-height: 35px;
+  padding-top: 10rem;
+}
+
+.photo-section button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.section-wrapper {
+  background-color: white;
+  padding-bottom: 8rem;
+  z-index: 1;
+}
+
+.modal-bg {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 440%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+footer {
+  background-color: #EEEFF4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding-top: 4rem;
+}
+
+footer button {
+  margin-top: 1rem;
+}
+
+footer .logo {
+  background-color: #1b1d23;
+  width: 14rem;
+  height: 6rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  bottom: 23.5rem;
+}
+
+footer a {
+  color: #60636d;
+  font-weight: 600;
+  size: 18px;
+  margin: 0.8rem;
+}
+/*# sourceMappingURL=styles.css.map */
