@@ -1,7 +1,8 @@
 $very-dark-blue: #1b1d23;
 $dark-gray: #60636d;
 $light-gray: #c8ccd8;
-$very-light-gray: #EEEFF4;
+$very-light-gray: #eeeff4;
+$gray: #7d828f;
 
 @font-face {
   font-family: "League Spartan";
@@ -23,6 +24,10 @@ $very-light-gray: #EEEFF4;
 
 %section {
   padding: 3rem 2rem;
+  @media (min-width: 600px) {
+    padding: 6rem;
+    margin: auto 5.5rem;
+  }
 }
 
 %button {
@@ -52,7 +57,6 @@ $very-light-gray: #EEEFF4;
 * {
   box-sizing: border-box;
   font-family: "League Spartan", sans-serif;
-  font-size: 62.5%;
   font-size: 18px;
 }
 
@@ -73,16 +77,29 @@ button {
   cursor: pointer;
 }
 
+.active {
+  color: $very-dark-blue !important;
+}
 
 .header-nav-wrapper {
   position: relative;
   z-index: 3;
-
+  @media (min-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @keyframes slide-down {
-  0% { opacity: 0.7; -webkit-transform: translateY(-20%); }   
-  100% { opacity: 1; -webkit-transform: translateY(0); }
+  0% {
+    opacity: 0.7;
+    -webkit-transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
 }
 
 #mobile-nav {
@@ -91,25 +108,71 @@ button {
   padding: 1rem;
   position: absolute;
   width: 100%;
-  animation: slide-down .3s linear;
- 
+  animation: slide-down 0.3s linear;
+  @media (min-width: 600px) {
+    display: inline-block;
+    background-color: transparent;
+    position: static;
+    width: auto;
+    animation: none;
+  }
+
   .ul-top-level {
     padding-left: 0;
+    > li {
+      @media (min-width: 600px) {
+        display: inline-block;
+        color: $gray;
+        margin: 0.4rem;
+        position: relative;
+      }
+    }
   }
+
   .izglitiba-sub,
   .pakalpojumi-sub,
   .blogs-sub {
     display: none;
+    @media (min-width: 600px) {
+      position: absolute;
+      background-color: white;
+      padding: 0 1rem;
+
+      li a:hover {
+        padding-left: 10px;
+        border-left: 2px solid $light-gray;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+    }
   }
+
+  .izglitiba-sub {
+    left: 28%;
+  }
+
+  .pakalpojumi-sub {
+    left: 44%;
+  }
+
+  .blogs-sub {
+    right: 3%;
+  }
+
   ul {
     list-style: none;
     color: $very-dark-blue;
     margin: 0;
     li {
       margin: 1rem;
-      font-weight: 700; 
+      font-weight: 700;
+
       a {
         font-size: 25px;
+        @media (min-width: 600px) {
+          font-size: 18px;
+          font-weight: 600;
+        }
       }
     }
   }
@@ -128,10 +191,16 @@ header {
     color: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
+    @media (min-width: 600px) {
+      display: none;
+    }
   }
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
+  @media (min-width: 600px) {
+    padding: 0.5rem 0;
+  }
 }
 
 .intro-tab {
@@ -206,6 +275,9 @@ header {
   height: 440%;
   background-color: rgba(0, 0, 0, 0.6);
   display: none;
+  @media (min-width: 600px) {
+    background-color: transparent;
+  }
 }
 
 footer {
@@ -226,7 +298,10 @@ footer {
     height: 6rem;
     object-fit: contain;
     position: absolute;
-    bottom: 23.5rem;
+    bottom: 18rem;
+    @media (min-width: 400px) {
+      bottom: 17rem;
+    }
   }
   a {
     color: $dark-gray;

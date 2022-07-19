@@ -15,6 +15,7 @@ window.onload = function () {
 const navButton = document.querySelector(".nav-button");
 const modal = document.querySelector(".modal-bg");
 const mobileNav = document.querySelector("#mobile-nav");
+const subsections = document.querySelectorAll(".subsection");
 
 navButton.addEventListener("click", () => {
   if (mobileNav.style.display === "block") {
@@ -27,29 +28,63 @@ navButton.addEventListener("click", () => {
 });
 
 modal.addEventListener("click", () => {
-  mobileNav.style.display = "none";
+  if (window.innerWidth < 600) {
+    mobileNav.style.display = "none";
+  } else {
+    for (let i = 0; i < subsections.length; i++) {
+      subsections[i].style.display = "none";
+    }
+    document.querySelector(".active").classList.remove("active");
+  }
   modal.style.display = "none";
 });
 
-function toggleSubsection(subsection) {
+window.addEventListener("resize", function () {
+  if (window.innerWidth >= 600) {
+    mobileNav.style.display = "block";
+    modal.style.display = "none";
+  } else {
+    mobileNav.style.display = "none";
+    for (let i = 0; i < subsections.length; i++) {
+      subsections[i].style.display = "none";
+    }
+  }
+});
+
+function toggleSubsection(topLevel, subsection) {
   if (document.querySelector(subsection).style.display === "block") {
     document.querySelector(subsection).style.display = "none";
+    if (window.innerWidth >= 600) {
+      modal.style.display = "none";
+      topLevel.classList.remove("active");
+    }
   } else {
+    for (let i = 0; i < subsections.length; i++) {
+      subsections[i].style.display = "none";
+    }
     document.querySelector(subsection).style.display = "block";
+    if (window.innerWidth >= 600) {
+      modal.style.display = "block";
+      const activeElement = document.querySelectorAll(".active");
+      for (let i = 0; i < activeElement.length; i++) {
+        activeElement[i].classList.remove("active");
+      }
+      topLevel.classList.add("active");
+    }
   }
 }
 
-const izglitibaTop = document.querySelector(".izglitiba-top")
-izglitibaTop.addEventListener("click", function() {
-  toggleSubsection(".izglitiba-sub")
-})
+const izglitibaTop = document.querySelector(".izglitiba-top");
+izglitibaTop.addEventListener("click", function () {
+  toggleSubsection(izglitibaTop, ".izglitiba-sub");
+});
 
-const pakalpojumiTop = document.querySelector(".pakalpojumi-top")
-pakalpojumiTop.addEventListener("click", function() {
-  toggleSubsection(".pakalpojumi-sub")
-})
+const pakalpojumiTop = document.querySelector(".pakalpojumi-top");
+pakalpojumiTop.addEventListener("click", function () {
+  toggleSubsection(pakalpojumiTop, ".pakalpojumi-sub");
+});
 
-const blogsTop = document.querySelector(".blogs-top")
-blogsTop.addEventListener("click", function() {
-  toggleSubsection(".blogs-sub")
-})
+const blogsTop = document.querySelector(".blogs-top");
+blogsTop.addEventListener("click", function () {
+  toggleSubsection(blogsTop, ".blogs-sub");
+});

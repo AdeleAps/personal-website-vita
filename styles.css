@@ -20,6 +20,13 @@
   padding: 3rem 2rem;
 }
 
+@media (min-width: 600px) {
+  .intro-tab, .description, .photo-section, footer {
+    padding: 6rem;
+    margin: auto 5.5rem;
+  }
+}
+
 .intro-tab button, .photo-section button, footer button {
   font-weight: 700;
   color: white;
@@ -56,7 +63,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "League Spartan", sans-serif;
-  font-size: 62.5%;
   font-size: 18px;
 }
 
@@ -77,9 +83,27 @@ button {
   cursor: pointer;
 }
 
+.active {
+  color: #1b1d23 !important;
+}
+
 .header-nav-wrapper {
   position: relative;
   z-index: 3;
+}
+
+@media (min-width: 600px) {
+  .header-nav-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @-webkit-keyframes slide-down {
@@ -106,22 +130,73 @@ button {
 
 #mobile-nav {
   display: none;
-  background-color: #EEEFF4;
+  background-color: #eeeff4;
   padding: 1rem;
   position: absolute;
   width: 100%;
-  -webkit-animation: slide-down .3s linear;
-          animation: slide-down .3s linear;
+  -webkit-animation: slide-down 0.3s linear;
+          animation: slide-down 0.3s linear;
+}
+
+@media (min-width: 600px) {
+  #mobile-nav {
+    display: inline-block;
+    background-color: transparent;
+    position: static;
+    width: auto;
+    -webkit-animation: none;
+            animation: none;
+  }
 }
 
 #mobile-nav .ul-top-level {
   padding-left: 0;
 }
 
+@media (min-width: 600px) {
+  #mobile-nav .ul-top-level > li {
+    display: inline-block;
+    color: #7d828f;
+    margin: 0.4rem;
+    position: relative;
+  }
+}
+
 #mobile-nav .izglitiba-sub,
 #mobile-nav .pakalpojumi-sub,
 #mobile-nav .blogs-sub {
   display: none;
+}
+
+@media (min-width: 600px) {
+  #mobile-nav .izglitiba-sub,
+  #mobile-nav .pakalpojumi-sub,
+  #mobile-nav .blogs-sub {
+    position: absolute;
+    background-color: white;
+    padding: 0 1rem;
+  }
+  #mobile-nav .izglitiba-sub li a:hover,
+  #mobile-nav .pakalpojumi-sub li a:hover,
+  #mobile-nav .blogs-sub li a:hover {
+    padding-left: 10px;
+    border-left: 2px solid #c8ccd8;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+}
+
+#mobile-nav .izglitiba-sub {
+  left: 28%;
+}
+
+#mobile-nav .pakalpojumi-sub {
+  left: 44%;
+}
+
+#mobile-nav .blogs-sub {
+  right: 3%;
 }
 
 #mobile-nav ul {
@@ -137,6 +212,13 @@ button {
 
 #mobile-nav ul li a {
   font-size: 25px;
+}
+
+@media (min-width: 600px) {
+  #mobile-nav ul li a {
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 
 header {
@@ -162,6 +244,18 @@ header button.nav-button {
   color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+@media (min-width: 600px) {
+  header button.nav-button {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  header {
+    padding: 0.5rem 0;
+  }
 }
 
 .intro-tab {
@@ -236,8 +330,14 @@ header button.nav-button {
   display: none;
 }
 
+@media (min-width: 600px) {
+  .modal-bg {
+    background-color: transparent;
+  }
+}
+
 footer {
-  background-color: #EEEFF4;
+  background-color: #eeeff4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,7 +363,13 @@ footer .logo {
   -o-object-fit: contain;
      object-fit: contain;
   position: absolute;
-  bottom: 23.5rem;
+  bottom: 18rem;
+}
+
+@media (min-width: 400px) {
+  footer .logo {
+    bottom: 17rem;
+  }
 }
 
 footer a {
