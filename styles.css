@@ -22,8 +22,8 @@
 
 @media (min-width: 600px) {
   .intro-tab, .description, .photo-section, footer {
-    padding: 6rem;
-    margin: auto 5.5rem;
+    padding: 8rem 6rem;
+    margin: 0 5.5rem;
   }
 }
 
@@ -51,12 +51,24 @@
           filter: brightness(10);
 }
 
+@media (min-width: 600px) {
+  .intro-tab button, .photo-section button, footer button {
+    padding: 1.5em 2rem;
+  }
+}
+
 .description:before {
   content: "";
   width: 20%;
   height: 2px;
   background: #c8ccd8;
   position: absolute;
+}
+
+@media (min-width: 600px) {
+  .description:before {
+    display: none;
+  }
 }
 
 * {
@@ -85,6 +97,37 @@ button {
 
 .active {
   color: #1b1d23 !important;
+}
+
+.side-decor span {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .side-decor span {
+    display: inline-block;
+    color: #c8ccd8;
+    line-height: 24px;
+    letter-spacing: 18px;
+    position: absolute;
+    top: 15rem;
+    padding-top: 4rem;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-filter: drop-shadow(4px 0px 5px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(4px 0px 5px rgba(0, 0, 0, 0.25));
+  }
+  .side-decor span:before {
+    content: "";
+    width: 150%;
+    border-bottom: solid 1px #c8ccd8;
+    position: absolute;
+    bottom: 0.75em;
+    right: 130%;
+    z-index: 1;
+    -webkit-filter: drop-shadow(1px 1px 40px white);
+            filter: drop-shadow(1px 1px 40px white);
+  }
 }
 
 .header-nav-wrapper {
@@ -187,16 +230,17 @@ button {
   }
 }
 
-#mobile-nav .izglitiba-sub {
-  left: 28%;
-}
-
-#mobile-nav .pakalpojumi-sub {
-  left: 44%;
-}
-
-#mobile-nav .blogs-sub {
-  right: 3%;
+@media (min-width: 600px) {
+  #mobile-nav .izglitiba-sub {
+    width: 13.5rem;
+  }
+  #mobile-nav .pakalpojumi-sub {
+    width: 19rem;
+  }
+  #mobile-nav .blogs-sub {
+    width: 12.5rem;
+    right: 2rem;
+  }
 }
 
 #mobile-nav ul {
@@ -270,20 +314,50 @@ header button.nav-button {
   margin-bottom: -0.5rem;
 }
 
+@media (min-width: 600px) {
+  .intro-tab p {
+    text-align: justify;
+  }
+}
+
 .intro-tab button {
   margin-top: 3rem;
 }
 
-.description {
-  text-align: justify;
+@media (min-width: 600px) {
+  .description {
+    text-align: justify;
+    margin: 0;
+    margin-bottom: -5rem;
+    color: #1b1d23;
+  }
 }
 
 .description h2 {
   text-align: left;
   font-size: 48px;
-  padding-top: 2.5rem;
-  margin-top: 0;
-  position: relative;
+}
+
+@media (min-width: 600px) {
+  .description h2 {
+    margin-top: 0;
+  }
+}
+
+.description .greeting {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .description .greeting {
+    display: block;
+    color: #eeeff4;
+    text-align: right;
+    font-size: 120px;
+    margin: -1.8rem;
+    position: relative;
+    right: 0.25em;
+  }
 }
 
 .photo-section {
@@ -301,12 +375,24 @@ header button.nav-button {
           flex-direction: column;
 }
 
+@media (min-width: 600px) {
+  .photo-section {
+    padding-top: 0;
+  }
+}
+
 .photo-section h2 {
   font-size: 28px;
   color: white;
   letter-spacing: -1px;
   line-height: 35px;
   padding-top: 10rem;
+}
+
+@media (min-width: 600px) {
+  .photo-section h2 {
+    padding-top: 20rem;
+  }
 }
 
 .photo-section button {
@@ -321,11 +407,17 @@ header button.nav-button {
   z-index: 1;
 }
 
+@media (min-width: 600px) {
+  .section-wrapper {
+    padding-bottom: 4rem;
+  }
+}
+
 .modal-bg {
   position: absolute;
   z-index: 2;
   width: 100%;
-  height: 440%;
+  height: 280%;
   background-color: rgba(0, 0, 0, 0.6);
   display: none;
 }
@@ -333,6 +425,7 @@ header button.nav-button {
 @media (min-width: 600px) {
   .modal-bg {
     background-color: transparent;
+    height: 200%;
   }
 }
 
@@ -352,8 +445,28 @@ footer {
   padding-top: 4rem;
 }
 
+@media (min-width: 600px) {
+  footer {
+    margin: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 0;
+    width: 80%;
+  }
+}
+
 footer button {
   margin-top: 1rem;
+}
+
+@media (min-width: 810px) {
+  footer button {
+    position: absolute;
+    right: -8rem;
+    bottom: 1.75rem;
+  }
 }
 
 footer .logo {
@@ -372,8 +485,16 @@ footer .logo {
   }
 }
 
+@media (min-width: 600px) {
+  footer .logo {
+    position: static;
+    width: 10rem;
+    height: 8rem;
+  }
+}
+
 footer a {
-  color: #60636d;
+  color: #7d828f;
   font-weight: 600;
   size: 18px;
   margin: 0.8rem;

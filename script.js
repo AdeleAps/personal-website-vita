@@ -59,9 +59,10 @@ function toggleSubsection(topLevel, subsection) {
       topLevel.classList.remove("active");
     }
   } else {
+    if (window.innerWidth >= 600) {
     for (let i = 0; i < subsections.length; i++) {
       subsections[i].style.display = "none";
-    }
+    }}
     document.querySelector(subsection).style.display = "block";
     if (window.innerWidth >= 600) {
       modal.style.display = "block";

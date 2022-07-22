@@ -25,8 +25,8 @@ $gray: #7d828f;
 %section {
   padding: 3rem 2rem;
   @media (min-width: 600px) {
-    padding: 6rem;
-    margin: auto 5.5rem;
+    padding: 8rem 6rem;
+    margin: 0 5.5rem;
   }
 }
 
@@ -44,6 +44,9 @@ $gray: #7d828f;
   img {
     filter: brightness(10);
   }
+  @media (min-width: 600px) {
+    padding: 1.5em 2rem;
+  }
 }
 
 %decor-pseudo {
@@ -52,6 +55,9 @@ $gray: #7d828f;
   height: 2px;
   background: $light-gray;
   position: absolute;
+  @media (min-width: 600px) {
+    display: none;
+  }
 }
 
 * {
@@ -79,6 +85,35 @@ button {
 
 .active {
   color: $very-dark-blue !important;
+}
+
+.side-decor {
+  span {
+    display: none;
+    @media (min-width: 900px) {
+      display: inline-block;
+      color: $light-gray;
+      line-height: 24px;
+      letter-spacing: 18px;
+      position: absolute;
+      top: 15rem;
+      padding-top: 4rem;
+      transform: rotate(90deg);
+      filter: drop-shadow(4px 0px 5px rgba(0, 0, 0, 0.25));
+
+      &:before {
+        content: "";
+        width: 150%;
+        border-bottom: solid 1px $light-gray;
+        position: absolute;
+        bottom: 0.75em;
+        right: 130%;
+        z-index: 1;
+        // this is the hackiest thing I've ever done, I'm embarrassed that this works
+        filter: drop-shadow(1px 1px 40px rgb(255, 255, 255));
+      }
+    }
+  }
 }
 
 .header-nav-wrapper {
@@ -147,16 +182,19 @@ button {
     }
   }
 
-  .izglitiba-sub {
-    left: 28%;
-  }
+  @media (min-width: 600px) {
+    .izglitiba-sub {
+      width: 13.5rem;
+    }
 
-  .pakalpojumi-sub {
-    left: 44%;
-  }
+    .pakalpojumi-sub {
+      width: 19rem;
+    }
 
-  .blogs-sub {
-    right: 3%;
+    .blogs-sub {
+      width: 12.5rem;
+      right: 2rem;
+    }
   }
 
   ul {
@@ -216,6 +254,9 @@ header {
   }
   p {
     @extend %body-text;
+    @media (min-width: 600px) {
+      text-align: justify;
+    }
   }
   button {
     @extend %button;
@@ -225,17 +266,35 @@ header {
 
 .description {
   @extend %section;
-  text-align: justify;
+  @media (min-width: 600px) {
+    text-align: justify;
+    margin: 0;
+    margin-bottom: -5rem;
+    color: $very-dark-blue;
+  }
+
   h2 {
     @extend %heading;
     text-align: left;
     font-size: 48px;
-    padding-top: 2.5rem;
-    margin-top: 0;
-    position: relative;
+    @media (min-width: 600px) {
+      margin-top: 0;
+    }
   }
   &:before {
     @extend %decor-pseudo;
+  }
+  .greeting {
+    display: none;
+    @media (min-width: 600px) {
+      display: block;
+      color: $very-light-gray;
+      text-align: right;
+      font-size: 120px;
+      margin: -1.8rem;
+      position: relative;
+      right: 0.25em;
+    }
   }
 }
 
@@ -248,6 +307,9 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   flex-direction: column;
+  @media (min-width: 600px) {
+    padding-top: 0;
+  }
   h2 {
     @extend %heading;
     font-size: 28px;
@@ -255,6 +317,9 @@ header {
     letter-spacing: -1px;
     line-height: 35px;
     padding-top: 10rem;
+    @media (min-width: 600px) {
+      padding-top: 20rem;
+    }
   }
   button {
     @extend %button;
@@ -266,17 +331,21 @@ header {
   background-color: white;
   padding-bottom: 8rem;
   z-index: 1;
+  @media (min-width: 600px) {
+    padding-bottom: 4rem;
+  }
 }
 
 .modal-bg {
   position: absolute;
   z-index: 2;
   width: 100%;
-  height: 440%;
+  height: 280%;
   background-color: rgba(0, 0, 0, 0.6);
   display: none;
   @media (min-width: 600px) {
     background-color: transparent;
+    height: 200%;
   }
 }
 
@@ -288,9 +357,21 @@ footer {
   align-items: center;
   position: relative;
   padding-top: 4rem;
+  @media (min-width: 600px) {
+    margin: 0;
+    flex-direction: row;
+    padding: 0;
+    width: 80%;
+  }
+
   button {
     @extend %button;
     margin-top: 1rem;
+    @media (min-width: 810px) {
+      position: absolute;
+      right: -8rem;
+      bottom: 1.75rem;
+    }
   }
   .logo {
     background-color: $very-dark-blue;
@@ -302,9 +383,14 @@ footer {
     @media (min-width: 400px) {
       bottom: 17rem;
     }
+    @media (min-width: 600px) {
+      position: static;
+      width: 10rem;
+      height: 8rem;
+    }
   }
   a {
-    color: $dark-gray;
+    color: $gray;
     font-weight: 600;
     size: 18px;
     margin: 0.8rem;
