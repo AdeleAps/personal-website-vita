@@ -12,7 +12,7 @@
 .intro-tab p {
   font-weight: 500;
   color: white;
-  size: 18px;
+  font-size: 18px;
   line-height: 24px;
 }
 
@@ -24,6 +24,13 @@
   .intro-tab, .description, .photo-section, footer {
     padding: 8rem 6rem;
     margin: 0 5.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .intro-tab, .description, .photo-section, footer {
+    padding: 10rem;
+    margin: 0 8rem !important;
   }
 }
 
@@ -44,6 +51,12 @@
           justify-content: space-between;
   padding: 1em 2rem;
   gap: 1rem;
+}
+
+.intro-tab button:hover, .photo-section button:hover, footer button:hover {
+  background-color: #60636d;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .intro-tab button img, .photo-section button img, footer button img {
@@ -91,6 +104,12 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  color: #1b1d23;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 button {
   cursor: pointer;
 }
@@ -130,6 +149,12 @@ button {
   }
 }
 
+@media (min-width: 992px) {
+  .side-decor span {
+    padding-top: 2rem;
+  }
+}
+
 .header-nav-wrapper {
   position: relative;
   z-index: 3;
@@ -146,6 +171,15 @@ button {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-nav-wrapper {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-left: 7rem;
   }
 }
 
@@ -205,6 +239,12 @@ button {
   }
 }
 
+@media (min-width: 600px) and (min-width: 992px) {
+  #mobile-nav .ul-top-level > li {
+    margin-right: 1.5rem;
+  }
+}
+
 #mobile-nav .izglitiba-sub,
 #mobile-nav .pakalpojumi-sub,
 #mobile-nav .blogs-sub {
@@ -219,6 +259,17 @@ button {
     background-color: white;
     padding: 0 1rem;
   }
+}
+
+@media (min-width: 600px) and (min-width: 992px) {
+  #mobile-nav .izglitiba-sub,
+  #mobile-nav .pakalpojumi-sub,
+  #mobile-nav .blogs-sub {
+    left: -3rem !important;
+  }
+}
+
+@media (min-width: 600px) {
   #mobile-nav .izglitiba-sub li a:hover,
   #mobile-nav .pakalpojumi-sub li a:hover,
   #mobile-nav .blogs-sub li a:hover {
@@ -237,9 +288,24 @@ button {
   #mobile-nav .pakalpojumi-sub {
     width: 19rem;
   }
+}
+
+@media (min-width: 600px) and (min-width: 992px) {
+  #mobile-nav .pakalpojumi-sub {
+    left: -6rem !important;
+  }
+}
+
+@media (min-width: 600px) {
   #mobile-nav .blogs-sub {
     width: 12.5rem;
     right: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #mobile-nav .blogs-sub {
+    left: 0;
   }
 }
 
@@ -279,6 +345,12 @@ header img.logo {
   width: 11rem;
 }
 
+@media (min-width: 992px) {
+  header img.logo {
+    margin-right: 2rem;
+  }
+}
+
 header button.nav-button {
   display: inline-block;
   border: none;
@@ -308,10 +380,24 @@ header button.nav-button {
   background-blend-mode: darken;
 }
 
+@media (min-width: 1100px) {
+  .intro-tab {
+    padding-right: 20rem;
+  }
+}
+
 .intro-tab h1 {
   color: white;
   font-size: 48px;
   margin-bottom: -0.5rem;
+}
+
+@media (min-width: 992px) {
+  .intro-tab h1 {
+    font-size: 75px;
+    margin-top: 0;
+    line-height: 70px;
+  }
 }
 
 @media (min-width: 600px) {
@@ -333,6 +419,18 @@ header button.nav-button {
   }
 }
 
+@media (min-width: 992px) {
+  .description {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding: 0;
+  }
+}
+
 .description h2 {
   text-align: left;
   font-size: 48px;
@@ -341,6 +439,25 @@ header button.nav-button {
 @media (min-width: 600px) {
   .description h2 {
     margin-top: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  .description h2 {
+    margin-top: 5rem;
+  }
+}
+
+.description img {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .description img {
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 30vw;
   }
 }
 
@@ -355,8 +472,27 @@ header button.nav-button {
     text-align: right;
     font-size: 120px;
     margin: -1.8rem;
+    margin-bottom: -7rem;
     position: relative;
     right: 0.25em;
+  }
+}
+
+@media (min-width: 992px) {
+  .description .greeting {
+    font-size: 180px;
+    text-align: left;
+    position: relative;
+    margin-bottom: -2rem;
+    margin-left: 10rem;
+    left: 0;
+    top: 6.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .description .text {
+    padding-right: 5rem;
   }
 }
 
@@ -381,6 +517,14 @@ header button.nav-button {
   }
 }
 
+@media (min-width: 992px) {
+  .photo-section {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .photo-section h2 {
   font-size: 28px;
   color: white;
@@ -392,6 +536,13 @@ header button.nav-button {
 @media (min-width: 600px) {
   .photo-section h2 {
     padding-top: 20rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .photo-section h2 {
+    width: 70%;
+    padding-top: 25rem;
   }
 }
 
@@ -469,6 +620,12 @@ footer button {
   }
 }
 
+@media (min-width: 992px) {
+  footer button {
+    right: -5rem;
+  }
+}
+
 footer .logo {
   background-color: #1b1d23;
   width: 14rem;
@@ -496,7 +653,13 @@ footer .logo {
 footer a {
   color: #7d828f;
   font-weight: 600;
-  size: 18px;
+  font-size: 18px;
   margin: 0.8rem;
+}
+
+@media (min-width: 1100px) {
+  footer a {
+    margin: auto 2.5rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

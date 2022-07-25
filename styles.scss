@@ -18,7 +18,7 @@ $gray: #7d828f;
 %body-text {
   font-weight: 500;
   color: white;
-  size: 18px;
+  font-size: 18px;
   line-height: 24px;
 }
 
@@ -27,6 +27,10 @@ $gray: #7d828f;
   @media (min-width: 600px) {
     padding: 8rem 6rem;
     margin: 0 5.5rem;
+  }
+  @media (min-width: 992px) {
+    padding: 10rem;
+    margin: 0 8rem !important; 
   }
 }
 
@@ -41,6 +45,10 @@ $gray: #7d828f;
   justify-content: space-between;
   padding: 1em 2rem;
   gap: 1rem;
+  &:hover {
+    background-color: $dark-gray;
+    transition: 0.2s;
+  }
   img {
     filter: brightness(10);
   }
@@ -77,6 +85,10 @@ a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  &:hover {
+    color: $very-dark-blue;
+    transition: 0.5s;
+  }
 }
 
 button {
@@ -113,6 +125,9 @@ button {
         filter: drop-shadow(1px 1px 40px rgb(255, 255, 255));
       }
     }
+    @media (min-width: 992px) {
+      padding-top: 2rem;
+    }
   }
 }
 
@@ -123,6 +138,10 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  @media (min-width: 992px) {
+    justify-content: flex-start;
+    margin-left: 7rem;
   }
 }
 
@@ -160,6 +179,9 @@ button {
         color: $gray;
         margin: 0.4rem;
         position: relative;
+        @media (min-width: 992px) {
+          margin-right: 1.5rem;
+        }
       }
     }
   }
@@ -172,6 +194,9 @@ button {
       position: absolute;
       background-color: white;
       padding: 0 1rem;
+      @media (min-width: 992px) {
+        left: -3rem !important;
+      }
 
       li a:hover {
         padding-left: 10px;
@@ -189,11 +214,19 @@ button {
 
     .pakalpojumi-sub {
       width: 19rem;
+      @media (min-width: 992px) {
+        left: -6rem !important;
+      }
     }
 
     .blogs-sub {
       width: 12.5rem;
       right: 2rem;
+    }
+  }
+  @media (min-width: 992px) {
+    .blogs-sub {
+      left: 0;
     }
   }
 
@@ -219,6 +252,9 @@ button {
 header {
   img.logo {
     width: 11rem;
+    @media (min-width: 992px) {
+      margin-right: 2rem;
+    }
   }
   button.nav-button {
     display: inline-block;
@@ -246,11 +282,19 @@ header {
   background-size: cover !important;
   background-position: center !important;
   background-blend-mode: darken;
+  @media (min-width: 1100px) {
+    padding-right: 20rem;
+  }
   h1 {
     @extend %heading;
     color: white;
     font-size: 48px;
     margin-bottom: -0.5rem;
+    @media (min-width: 992px) {
+      font-size: 75px;
+      margin-top: 0;
+      line-height: 70px;
+    }
   }
   p {
     @extend %body-text;
@@ -272,7 +316,11 @@ header {
     margin-bottom: -5rem;
     color: $very-dark-blue;
   }
-
+  @media (min-width: 992px) {
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+  }
   h2 {
     @extend %heading;
     text-align: left;
@@ -280,9 +328,20 @@ header {
     @media (min-width: 600px) {
       margin-top: 0;
     }
+    @media (min-width: 600px) {
+      margin-top: 5rem;
+    }
   }
   &:before {
     @extend %decor-pseudo;
+  }
+  img {
+    display: none;
+    @media (min-width: 992px) {
+      display: block;
+      object-fit: cover;
+      width: 30vw;
+    }
   }
   .greeting {
     display: none;
@@ -292,8 +351,23 @@ header {
       text-align: right;
       font-size: 120px;
       margin: -1.8rem;
+      margin-bottom: -7rem;
       position: relative;
       right: 0.25em;
+    }
+    @media (min-width: 992px) {
+      font-size: 180px;
+      text-align: left;
+      position: relative;
+      margin-bottom: -2rem;
+      margin-left: 10rem;
+      left: 0;
+      top: 6.5rem;
+    }
+  }
+  .text {
+    @media (min-width: 992px) {
+      padding-right: 5rem;
     }
   }
 }
@@ -310,6 +384,9 @@ header {
   @media (min-width: 600px) {
     padding-top: 0;
   }
+  @media (min-width: 992px) {
+    align-items: center;
+  } 
   h2 {
     @extend %heading;
     font-size: 28px;
@@ -319,6 +396,10 @@ header {
     padding-top: 10rem;
     @media (min-width: 600px) {
       padding-top: 20rem;
+    }
+    @media (min-width: 992px) {
+      width: 70%;
+      padding-top: 25rem;
     }
   }
   button {
@@ -372,6 +453,9 @@ footer {
       right: -8rem;
       bottom: 1.75rem;
     }
+    @media (min-width: 992px) {
+      right: -5rem;
+    }
   }
   .logo {
     background-color: $very-dark-blue;
@@ -392,7 +476,10 @@ footer {
   a {
     color: $gray;
     font-weight: 600;
-    size: 18px;
+    font-size: 18px;
     margin: 0.8rem;
+    @media (min-width: 1100px) {
+      margin: auto 2.5rem;
+    }
   }
 }
